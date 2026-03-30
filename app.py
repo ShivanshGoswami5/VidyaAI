@@ -1,6 +1,5 @@
 
 import streamlit as st
-from streamlit_option_menu import option_menu
 import google.generativeai as genai
 from difflib import SequenceMatcher
 import json
@@ -446,21 +445,13 @@ with col2:
 
 st.markdown("---")
 
-# Sidebar Menu
+ # Sidebar Menu
 with st.sidebar:
-    page = option_menu(
+    page = st.radio(
         "Navigation",
-        ["💬 Chat", "🎓 Learn", "💎 Premium", "📊 Dashboard", "⚙️ Settings"],
-        icons=["chat-dots", "book", "gem", "graph-up", "gear"],
-        menu_icon="cast",
-        default_index=0,
-        styles={
-            "container": {"background-color": "rgba(26,31,58,0.6)"},
-            "icon": {"color": "#00d4ff"},
-            "nav-link": {"color": "#ffffff", "--hover-color": "#00d4ff"},
-        }
+        ["💬 Chat", "🎓 Learn", "💎 Premium", "📊 Dashboard", "⚙️ Settings"]
     )
-
+    
 # Initialize Groq API (Use Gemini as fallback)
 GROQ_API_KEY = "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"  # Replace with your key
 vidya = VidyaAIEngine(GROQ_API_KEY)
