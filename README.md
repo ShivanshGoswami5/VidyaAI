@@ -1,4 +1,4 @@
-streamlit==1.28.1
-google-generativeai==0.4.0
-requests==2.31.0
-Pillow==10.1.0
+streamlit
+google-generativeai
+requests
+Pillow
